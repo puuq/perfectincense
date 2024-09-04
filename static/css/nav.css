@@ -1,0 +1,58 @@
+
+  * {
+    padding: 0;
+    margin: 0;
+    font-family: 'Varela Round', sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  
+  body{
+    overflow: hidden;
+  }
+
+  html {
+    /* font-size: 62.5%; */
+    font-family: "Montserrat", sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #E6F7FF;
+    /* padding: 1rem 6rem; */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensures header stays above other content */
+    height: 4.5rem;
+}
+
+.logo{
+    padding: 1rem 6rem;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #000;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
