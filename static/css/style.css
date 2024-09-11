@@ -253,10 +253,17 @@ i{
     display: block;
 }
 
-.service-carousel-text {
-    margin-top: 10px;
+.service-carousel-title {
+    margin-top: 15px;
     font-size: 16px;
     color: #333;
+    font-weight: bold;
+}
+
+.service-carousel-price {
+    margin-top: -10px;
+    font-size: 20px;
+    color: #36af36;
     font-weight: bold;
 }
 
