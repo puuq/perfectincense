@@ -44,8 +44,32 @@ nav ul li a {
     text-decoration: none;
     color: #000;
     font-size: 1.2rem;
-    font-weight: 500;
+    font-weight: 550;
+    position: relative; /* Needed to position the ::after element */
 }
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -3px; /* Adjust this to control the underline distance from the text */
+    left: 0;
+    background-color: #36af36; /* Underline color */
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after {
+    visibility: visible;
+    width: 100%; /* Full width of the underline on hover */
+}
+
+nav ul li a:hover {
+    color: #36af36;
+    font-weight: 700;
+}
+
 
 .dropdown-menu {
   display: none;
@@ -319,6 +343,14 @@ i{
     justify-content: center;
     min-height: 440px;
   }
+
+  /* Wrapper for each card and title */
+.card-wrapper-past {
+    display: flex;
+    flex-direction: column; /* Stack card and title vertically */
+    align-items: center; /* Center title below the card */
+    max-width: 350px; /* Ensure that the card and title share the same width */
+}
   
   .card-backgrounds-past {
     max-width: 350px;
@@ -362,7 +394,7 @@ i{
     opacity: 1;
   }
   
-  .price-tag-backgrounds-past {
+  /* .price-tag-backgrounds-past {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -370,7 +402,7 @@ i{
     border-radius: 7px 15px;
     color: #fff;
     background-color: #9e0788;
-  }
+  } */
   
   .owned-past {
     border: 3px solid #36af36;
@@ -386,8 +418,16 @@ i{
     color: #fff;
     background-color: #36af36;
   }
+
+  .card-title-past {
+    margin-top: 10px; /* Adds space between the card and the title */
+    text-align: center;
+    font-size: 18px;
+    color: #333; /* Adjust text color */
+    font-weight: bold;
+  }
   
-  .one-past {
+  /* .one-past {
     background: url("{% static 'images/past/past 1.jpg' %}") center center no-repeat;
     background-size: 400px;
 }
@@ -415,7 +455,7 @@ i{
   .six-past {
     background: url("{% static 'images/past/past 2.jpg' %}") center center no-repeat;
     background-size: 400px;
-  }
+  } */
 
 
   /* cleaning solutions */
@@ -435,7 +475,222 @@ i{
     color: #36af36;
 }
 
+/* Testimonial CSS Code Start */
+/* testimonials styling start */
+.testimonials {
+		color: #000;
+	font-family: "Shippori Antique", sans-serif;
+	height: 70vh;
+	display: grid;
+	place-items: center;
+  background-color: #ffffff;
+  overflow: hidden;
+  min-height: 80vh;
+  position: relative;
+}
 
+.content-wrapper {
+	height: 100%;
+	width: 70%;
+	max-width: 100rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 2rem;
+}
+
+h1 {
+  margin-top: 1rem;
+	margin-bottom: calc(0.7rem + 0.5vmin);
+	font-size: calc(2.5rem + 1.5vmin);
+}
+
+.testimonials h1 span{
+  border-bottom: 2px solid black;
+  padding-bottom: 10px; /* Adjust the padding as needed */
+  margin-bottom: 20px; /* Adjust the margin as needed */
+}
+
+.wrapper-for-arrows {
+	position: relative;
+	width: 70%;
+	border-radius: 2rem;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	overflow: hidden;
+	display: grid;
+	place-items: center;
+}
+
+.review-wrap {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-top: calc(2rem + 1vmin);
+	width: 100%;
+  background-color: #fafafa;
+}
+
+#imgDiv {
+  border-radius: 50%;
+  width: calc(6rem + 4vmin);
+  height: calc(6rem + 4vmin);
+  position: relative;
+  box-shadow: 5px -3px #b4a7f3;
+  background-size: cover;
+  margin-bottom: calc(0.7rem + 0.5vmin);
+}
+
+#imgDiv img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  border-radius: 50%; /* Ensure the image remains circular */
+}
+
+#imgDiv::after {
+  content: "''";
+  font-size: calc(2rem + 2vmin);
+  font-family: sans-serif;
+  line-height: 150%;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background-color: #6751D7;
+  position: absolute;
+  top: 10%;
+  left: -10%;
+  width: calc(2rem + 2vmin);
+  height: calc(2rem + 2vmin);
+}
+
+#personName {
+	margin-bottom: calc(0.7rem + 0.5vmin);
+	font-size: calc(1rem + 0.5vmin);
+	letter-spacing: calc(0.1rem + 0.1vmin);
+	font-weight: bold;
+}
+
+#profession {
+	font-size: calc(0.8rem + 0.3vmin);
+	margin-bottom: calc(0.7rem + 0.5vmin);
+	color: #6751D7;
+  font-weight: bold;
+}
+
+#description {
+	font-size: calc(0.8rem + 0.4vmin);
+	width: 70%;
+	max-width: 40rem;
+	text-align: center;
+	margin-bottom: calc(0.2rem + 0.1vmin);
+	color: rgb(92, 92, 92);
+	line-height: 2rem;
+  min-height: 10rem;
+  max-height: 16rem;
+  overflow: auto;
+  font-weight: 500;
+}
+
+.star-container {
+  margin-bottom: 5px;
+}
+
+.surprise-me-btn {
+	border: 2px solid #6751D7;
+	background-color: #ded9fd;
+	color: #6751D7;
+	border-radius: 2rem;
+	padding: calc(0.5rem + 0.2vmin) 0;
+	width: calc(14rem + 8vmin);
+	text-align: center;
+	transition: background-color 0.3s, transform 0.3s;
+	cursor: pointer;
+	margin-bottom: calc(1.4rem + 1vmin);
+}
+
+.surprise-me-btn:hover {
+	transition: background-color 0.3s, transform 0.3s;
+	background-color: rgb(255, 255, 255);
+}
+
+.arrow-wrap {
+	position: absolute;
+	top: 50%;
+}
+
+.arrow {
+	width: calc(1.4rem + 0.6vmin);
+	height: calc(1.4rem + 0.6vmin);
+	border: solid #6751D7;
+	border-width: 0 calc(0.5rem + 0.2vmin) calc(0.5rem + 0.2vmin) 0;
+	cursor: pointer;
+	transition: transform 0.3s;
+}
+
+.arrow:hover {
+	transition: 0.3s;
+	transform: scale(1.15);
+}
+
+.left-arrow-wrap {
+	left: 5%;
+	transform: rotate(135deg);
+	-webkit-transform: rotate(135deg);
+}
+
+.right-arrow-wrap {
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	right: 5%;
+}
+
+.move-head {
+	animation: moveHead 1.55s infinite;
+	animation-delay: -0.8s;
+}
+
+.hide-chicken-btn {
+	border: 2px solid rgb(226, 89, 79);
+	background-color: rgb(255, 224, 224);
+	color: rgb(226, 79, 79);
+	border-radius: 2rem;
+	padding: calc(0.5rem + 0.2vmin) 0;
+	width: calc(10rem + 5vmin);
+	text-align: center;
+	transition: background-color 0.3s, transform 0.3s;
+	cursor: pointer;
+	margin-bottom: calc(1.4rem + 1vmin);
+}
+
+.hide-chicken-btn:hover {
+	transition: background-color 0.3s, transform 0.3s;
+	background-color: rgb(255, 255, 255);
+	transform: rotate(5deg);
+}
+
+@keyframes moveHead {
+	0% {
+	}
+	25% {
+		transform: translate(0.5rem, 1rem) rotate(5deg);
+	}
+	100% {
+		transform: translate(0, 0) rotate(-5deg);
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.content-wrapper {
+		width: 100%;
+	}
+}
+
+/* testimonials styling end */
+  /* Textimonial CSS Code End */
 
 
 
