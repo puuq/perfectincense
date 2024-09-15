@@ -1,5 +1,18 @@
 html {
   scroll-behavior: smooth;
+  border: red 1px solid;
+}
+
+@media screen and (max-width: 768px) {
+  html{
+    zoom: 0.9;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  html{
+    zoom: 0.7;
+  }
 }
 
 body {
@@ -9,17 +22,19 @@ body {
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #E6F7FF;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    height: 4.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #E6F7FF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 4.5rem;
+  padding: 0 1.5rem; /* Adjust padding to give space on smaller screens */
+  box-sizing: border-box; /* Ensure padding is accounted for inside the width */
 }
 
 .logo{
@@ -71,7 +86,7 @@ nav ul li a:hover {
 }
 
 
-.dropdown-menu {
+/* .dropdown-menu {
   display: none;
   position: absolute;
   background-color: #E6F7FF;
@@ -97,27 +112,89 @@ nav ul li a:hover {
 .dropdown-menu li a:hover {
   background-color: #E6F7FF;
   color: #36af36;
-}
+} */
 
 
+
+/* Contact Info */
 .contact-info {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    padding: 1rem 6rem;
-    font-size: 1.2rem;
-    font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem 6rem;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 .contact-btn {
-    background-color: #36af36;
-    color: white;
-    padding: 0.8rem 1.7rem;
-    text-decoration: none;
-    border-radius: 2rem;
-    font-weight: bold;
+  background-color: #36af36;
+  color: white;
+  padding: 0.8rem 1.7rem;
+  text-decoration: none;
+  border-radius: 2rem;
+  font-weight: bold;
 }
 
+
+.contact-btn:hover {
+  background-color: #2b952b;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 0.4rem;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #000;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  nav ul {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: #E6F7FF;
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+      display: none;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  nav ul.active {
+      display: flex;
+  }
+
+  nav ul li {
+      padding: 1rem 0;
+  }
+
+  .hamburger {
+      display: flex;
+      margin-right: 4%;
+  }
+
+  .contact-info {
+      display: none;
+  }
+
+  header {
+    padding: 0 1rem; /* Reduce padding for smaller screens */
+}
+}
+
+
+/* content styling */
 .hero {
     display: flex;
     justify-content: space-between;
@@ -214,7 +291,8 @@ i{
 
 /* our cleaning services */
 .services{
-    padding: 4rem 0;
+    /* padding: 4rem 0; */
+    width: 100%;
 }
 
 .services h1{
@@ -753,10 +831,14 @@ h1 {
 .footer {
     background-color: #36af36;
     color: white;
-    padding: 20px;
+    /* padding: 20px; */
     text-align: center;
     bottom: 0;
     width: 100%;
+}
+
+.footer-content{
+  padding: 15px;
 }
 
 .footer .menu,

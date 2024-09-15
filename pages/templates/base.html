@@ -46,7 +46,7 @@
         <h1>Perfect Incense</h1>
     </div>
     <nav>
-        <ul>
+        <ul class="nav-links">
             <li><a href="#logo">Home</a></li>
             <li><a href="#services">Services & Pricing</a></li>
             <li><a href="#portfolio">Portfolio</a></li>         
@@ -56,6 +56,12 @@
     <div class="contact-info">
         <span>+61 999 999 999</span>
         <a href="#contact-us" class="contact-btn">Contact Us +</a>
+    </div>
+    <!-- Hamburger Menu Icon -->
+    <div class="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
     </div>
 </header>
 
@@ -502,7 +508,8 @@
     <div id="contact-us">
         <h2>Ready for our service?</h2>
         <div class="contact-form">
-            <h2>FILL OUT THE FORM AND WE WILL CONTACT YOU</h2>
+            <h2>FILL OUT THE FORM AND WE WILL CONTACT YOU</h2><br>
+
             <form action="#">
                 <div>
                     <label for="first-name">Your first name</label>
@@ -557,8 +564,9 @@
                 <a href="#">Privacy policy</a> |
                 <a href="#">Terms and conditions</a>
             </div>
+            <p>&copy; Perfect Incense</p>
         </div>
-        <p>&copy; Perfect Incense</p>
+
     </div>
 
     <!-- Back to Top Button -->
@@ -587,6 +595,16 @@
             });
         });
         </script>
+
+        <!-- Add this JavaScript at the end of the body -->
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+</script>
 
 <script>
     // Get the button
