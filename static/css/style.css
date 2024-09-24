@@ -37,53 +37,104 @@ header {
   box-sizing: border-box; /* Ensure padding is accounted for inside the width */
 }
 
-.logo{
-    padding: 1rem 6rem;
+.logo {
+  padding: 1rem 6rem;
 }
 
 .logo h1 {
-    margin: 0;
-    font-size: 24px;
-    color: #000;
+  margin: 0;
+  font-size: 24px;
+  color: #000;
 }
 
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 2rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: #000;
-    font-size: 1.2rem;
-    font-weight: 550;
-    position: relative; /* Needed to position the ::after element */
+  text-decoration: none;
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: 550;
+  position: relative; /* Needed to position the ::after element */
 }
 
 nav ul li a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -3px; /* Adjust this to control the underline distance from the text */
-    left: 0;
-    background-color: #36af36; /* Underline color */
-    visibility: hidden;
-    transition: all 0.3s ease-in-out;
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -3px; /* Adjust this to control the underline distance from the text */
+  left: 0;
+  background-color: #36af36; /* Underline color */
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
 }
 
 nav ul li a:hover::after {
-    visibility: visible;
-    width: 100%; /* Full width of the underline on hover */
+  visibility: visible;
+  width: 100%; /* Full width of the underline on hover */
 }
 
 nav ul li a:hover {
-    color: #36af36;
-    font-weight: 700;
+  color: #36af36;
+  font-weight: 700;
 }
+
+/* Responsive Styles */
+.hamburger {
+  display: none; /* Hide hamburger by default */
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  height: 5px;
+  width: 3rem;
+  background-color: #000;
+  margin: 2px 0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  nav ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #E6F7FF;
+      width: 100%;
+      flex-direction: column;
+      display: none; /* Hide menu by default */
+      padding: 1rem 0;
+      gap: 0;
+  }
+
+  nav ul.active {
+      display: flex; /* Show menu when active */
+  }
+
+  .hamburger {
+      display: flex; /* Show hamburger on mobile */
+  }
+
+  nav ul li {
+      text-align: center; /* Center align text */
+      padding: 1rem 0; /* Add padding for links */
+  }
+
+  nav ul li a {
+      font-size: 1.5rem; /* Increase font size for easier tapping */
+  }
+
+  .contact-info {
+      display: none; /* Hide contact info on small screens */
+  }
+}
+
 
 
 /* .dropdown-menu {
@@ -375,6 +426,10 @@ i {
   justify-content: center;
   margin-bottom: 20px;
   flex-wrap: wrap; /* Allow buttons to wrap */
+  width: 70%;
+  align-items: center;
+  justify-items: center ;
+  padding-left: 15%;
 }
 
 .service-filter-btn {
@@ -382,7 +437,7 @@ i {
   margin: 5px; /* Use margin instead of margin-left/right for uniformity */
   border: none;
   cursor: pointer;
-  background-color: #dfdfdf;
+  background-color: #d0e0e7;
   border-radius: 5px;
   flex: 1; /* Make buttons flexible */
   min-width: 150px; /* Minimum width for buttons */
@@ -437,23 +492,23 @@ i {
 }
 
 /* Responsive carousel items */
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   .service-carousel-item {
-      flex: 0 0 33.33%; /* 3 items visible on medium screens */
+      flex: 0 0 33.33%;
   }
 }
 
 @media (max-width: 768px) {
   .service-carousel-item {
-      flex: 0 0 50%; /* 2 items visible on smaller screens */
+      flex: 0 0 50%;
   }
 }
 
 @media (max-width: 480px) {
   .service-carousel-item {
-      flex: 0 0 100%; /* 1 item visible on extra small screens */
+      flex: 0 0 100%;
   }
-}
+} */
 
 .service-carousel-title {
   margin-top: 15px;
@@ -506,10 +561,9 @@ i {
 
 /* past works */
 .past-works {
-  background-color: #B8B3E3;
+  background-color: #E6F7FF;
   margin: 2rem 0;
   padding: 2rem;
-  box-shadow: 0px -15px 10px #B8B3E3;
 }
 
 .past-works h1 {
@@ -1000,6 +1054,18 @@ h1 {
 
 .contact-form input[type="submit"]:hover {
     background-color: #37a637;
+}
+
+@media screen and (max-width: 768px) {
+	.contact-form{
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 468px) {
+	.contact-form{
+    width: 80%;
+  }
 }
 
 /* footer  */

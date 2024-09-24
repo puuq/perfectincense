@@ -13,27 +13,27 @@
     {% block extra_css %}{% endblock %}
     <style>
         .one-past {
-          background: url("{% static 'images/past/past 1.jpg' %}") center center no-repeat;
+          background: url("{% static 'images/service/past1.png' %}") center center no-repeat;
           background-size: 400px;
         }
         .two-past {
-          background: url("{% static 'images/past/past 2.jfif' %}") center center no-repeat;
+          background: url("{% static 'images/service/past2.png' %}") center center no-repeat;
           background-size: 400px;
         }
         .three-past {
-          background: url("{% static 'images/past/past 1.jpg' %}") center center no-repeat;
+          background: url("{% static 'images/service/past3.png' %}") center center no-repeat;
           background-size: 400px;
         }
         .four-past {
-          background: url("{% static 'images/past/past 2.jfif' %}") center center no-repeat;
+          background: url("{% static 'images/service/past4.png' %}") center center no-repeat;
           background-size: 400px;
         }
         .five-past {
-          background: url("{% static 'images/past/past 1.jpg' %}") center center no-repeat;
+          background: url("{% static 'images/service/past5.png' %}") center center no-repeat;
           background-size: 400px;
         }
         .six-past {
-          background: url("{% static 'images/past/past 2.jfif' %}") center center no-repeat;
+          background: url("{% static 'images/service/past6.png' %}") center center no-repeat;
           background-size: 400px;
         }
       </style>
@@ -46,12 +46,14 @@
         <h1>Perfect Incense</h1>
     </div>
     <nav>
-        <ul class="nav-links">
-            <li><a href="#logo">Home</a></li>
-            <li><a href="#services">Services & Pricing</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>         
-            <li><a href="#about">About</a></li>
-        </ul>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#logo">Home</a></li>
+                <li><a href="#services">Services & Pricing</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>         
+                <li><a href="#about">About</a></li>
+            </ul>
+        </div>
     </nav>
     <div class="contact-info">
         <span>+61 424 750 823</span>
@@ -64,6 +66,7 @@
         <div class="bar"></div>
     </div>
 </header>
+
 
 <section class="hero">
     <div class="hero-text1">
@@ -102,9 +105,9 @@
         <button class="service-filter-btn service-active" data-service-filter="house">Residental Property</button>
         <button class="service-filter-btn" data-service-filter="school" id="school">School</button>
         <button class="service-filter-btn" data-service-filter="office">Office</button>
-        <button class="service-filter-btn" data-service-filter="public">Public Space</button>
+        {% comment %} <button class="service-filter-btn" data-service-filter="public">Public Space</button>
         <button class="service-filter-btn" data-service-filter="apartment">Apartment</button>
-        <button class="service-filter-btn" data-service-filter="kitchen">Kitchen</button>
+        <button class="service-filter-btn" data-service-filter="kitchen">Kitchen</button> {% endcomment %}
         <button class="service-filter-btn" data-service-filter="stores">Stores</button>
         <button class="service-filter-btn" data-service-filter="restaurant">Restaurant</button>
         <button class="service-filter-btn" data-service-filter="gyms">Gyms</button>
@@ -115,83 +118,86 @@
             <div class="service-carousel">
 
                 <div class="service-carousel-content">
-                    <div class="service-carousel-item service-house service-active">
-                        <img src="{% static 'images/service/furniture.png' %}" alt="House Image 1">
+                    <div class="service-carousel-item service-house">
+                        <img src="{% static 'images/service/regularhouse.jpg' %}" alt="House Image 1">
                         <p class="service-carousel-title">House Cleaning</p>
                         <p class="service-carousel-price">$150</p>
                     </div>
-                    <div class="service-carousel-item service-house service-active">
-                        <img src="{% static 'images/service/furniture.png' %}" alt="House Image 2">
+                    <div class="service-carousel-item service-house">
+                        <img src="{% static 'images/service/kitchen.png' %}" alt="House Image 2">
+                        <p class="service-carousel-title">Kitchen Cleaning</p>
+                        <p class="service-carousel-price">$150</p>
+                    </div>
+                    <div class="service-carousel-item service-house">
+                        <img src="{% static 'images/service/deepcleaning.jfif' %}" alt="House Image 3">
+                        <p class="service-carousel-title">Deep Cleaning</p>
+                        <p class="service-carousel-price">$150</p>
+                    </div>
+                    <div class="service-carousel-item service-house">
+                        <img src="{% static 'images/service/window.png' %}" alt="House Image 4">
                         <p class="service-carousel-title">Window Cleaning</p>
                         <p class="service-carousel-price">$150</p>
                     </div>
-                    <div class="service-carousel-item service-house service-active">
-                        <img src="{% static 'images/service/furniture.png' %}" alt="House Image 3">
-                        <p class="service-carousel-title">Gym Cleaning</p>
-                        <p class="service-carousel-price">$150</p>
-                    </div>
-                    <div class="service-carousel-item service-house service-active">
-                        <img src="{% static 'images/service/furniture.png' %}" alt="House Image 4">
-                        <p class="service-carousel-title">House Cleaning</p>
-                        <p class="service-carousel-price">$150</p>
-                    </div>
-                    <div class="service-carousel-item service-house service-active">
-                        <img src="{% static 'images/service/furniture.png' %}" alt="House Image 5">
-                        <p class="service-carousel-title">Window Cleaning</p>
+                    <div class="service-carousel-item service-house">
+                        <img src="{% static 'images/service/pressure washing.png' %}" alt="House Image 5">
+                        <p class="service-carousel-title">Presure Washing</p>
                         <p class="service-carousel-price">$150</p>
                     </div>
 
+
                     <div class="service-carousel-item service-school">
-                        <img src="{% static 'images/service/furniture.png' %}" alt="House Image 1">
-                        <p class="service-carousel-title">House Cleaning</p>
+                        <img src="{% static 'images/service/class.jpg' %}" alt="House Image 1">
+                        <p class="service-carousel-title">Class Cleaning</p>
                         <p class="service-carousel-price">$150</p>
                     </div>
                     <div class="service-carousel-item service-school">
-                        <img src="{% static 'images/service/furniture.png' %}" alt="House Image 2">
-                        <p class="service-carousel-title">House Cleaning</p>
+                        <img src="{% static 'images/service/schoolcafeteria.png' %}" alt="House Image 2">
+                        <p class="service-carousel-title">School Cafeteria</p>
                         <p class="service-carousel-price">$150</p>
                     </div>
                     <div class="service-carousel-item service-school">
-                        <img src="{% static 'images/service/furniture.png' %}" alt="House Image 3">
-                        <p class="service-carousel-title">House Cleaning</p>
+                        <img src="{% static 'images/service/schoolwindow.png' %}" alt="House Image 3">
+                        <p class="service-carousel-title">Window</p>
                         <p class="service-carousel-price">$150</p>
                     </div>
                     <div class="service-carousel-item service-school">
-                        <img src="{% static 'images/service/furniture.png' %}" alt="House Image 4">
-                        <p class="service-carousel-title">House Cleaning</p>
+                        <img src="{% static 'images/service/restroom.png' %}" alt="House Image 4">
+                        <p class="service-carousel-title">Restroom</p>
                         <p class="service-carousel-price">$150</p>
                     </div>
                     <div class="service-carousel-item service-school">
-                        <img src="{% static 'images/service/furniture.png' %}" alt="House Image 5">
-                        <p class="service-carousel-title">House Cleaning</p>
+                        <img src="{% static 'images/service/playground-cleaning.png' %}" alt="House Image 5">
+                        <p class="service-carousel-title">Playground</p>
                         <p class="service-carousel-price">$150</p>
                     </div>
 
+
                     <div class="service-carousel-item service-office">
-                        <img src="{% static 'images/service/furniture.png' %}" alt="House Image 1">
-                        <p class="service-carousel-title">House Cleaning</p>
+                        <img src="{% static 'images/service/office1.png' %}" alt="House Image 1">
+                        <p class="service-carousel-title">Detail Cleaning</p>
                         <p class="service-carousel-price">$150</p>
                     </div>
                     <div class="service-carousel-item service-office">
-                        <img src="{% static 'images/service/furniture.png' %}" alt="House Image 2">
-                        <p class="service-carousel-title">House Cleaning</p>
+                        <img src="{% static 'images/service/office2.png' %}" alt="House Image 2">
+                        <p class="service-carousel-title">Carpet and upholstery cleaning</p>
                         <p class="service-carousel-price">$150</p>
                     </div>
                     <div class="service-carousel-item service-office">
-                        <img src="{% static 'images/service/furniture.png' %}" alt="House Image 3">
-                        <p class="service-carousel-title">House Cleaning</p>
+                        <img src="{% static 'images/service/office3.png' %}" alt="House Image 3">
+                        <p class="service-carousel-title">Post-event cleanup</p>
                         <p class="service-carousel-price">$150</p>
                     </div>
                     <div class="service-carousel-item service-office">
-                        <img src="{% static 'images/service/furniture.png' %}" alt="House Image 4">
-                        <p class="service-carousel-title">House Cleaning</p>
+                        <img src="{% static 'images/service/office4.png' %}" alt="House Image 4">
+                        <p class="service-carousel-title">Deep cleaning for special occasions</p>
                         <p class="service-carousel-price">$150</p>
                     </div>
                     <div class="service-carousel-item service-office">
-                        <img src="{% static 'images/service/furniture.png' %}" alt="House Image 5">
-                        <p class="service-carousel-title">House Cleaning</p>
+                        <img src="{% static 'images/service/office5.png' %}" alt="House Image 5">
+                        <p class="service-carousel-title">Weekly based cleaning</p>
                         <p class="service-carousel-price">$150</p>
                     </div>
+
 
                     <div class="service-carousel-item service-public">
                         <img src="{% static 'images/service/furniture.png' %}" alt="House Image 1">
@@ -218,6 +224,7 @@
                         <p class="service-carousel-title">House Cleaning</p>
                         <p class="service-carousel-price">$150</p>
                     </div>
+
 
                     <div class="service-carousel-item service-apartment">
                         <img src="{% static 'images/service/furniture.png' %}" alt="Office Image 1">
@@ -245,6 +252,7 @@
                         <p class="service-carousel-price">$150</p>
                     </div>
 
+
                     <div class="service-carousel-item service-kitchen">
                         <img src="{% static 'images/service/furniture.png' %}" alt="House Image 1">
                         <p class="service-carousel-title">House Cleaning</p>
@@ -271,81 +279,84 @@
                         <p class="service-carousel-price">$150</p>
                     </div>
                     
+
                     <div class="service-carousel-item service-stores">
-                        <img src="{% static 'images/service/furniture.png' %}" alt="House Image 1">
-                        <p class="service-carousel-title">House Cleaning</p>
+                        <img src="{% static 'images/service/store1.png' %}" alt="House Image 1">
+                        <p class="service-carousel-title">Retail space cleaning (daily/weekly)</p>
                         <p class="service-carousel-price">$150</p>
                     </div>
                     <div class="service-carousel-item service-stores">
-                        <img src="{% static 'images/service/furniture.png' %}" alt="House Image 2">
-                        <p class="service-carousel-title">House Cleaning</p>
+                        <img src="{% static 'images/service/store2.png' %}" alt="House Image 2">
+                        <p class="service-carousel-title">Floor Maintenance (waxing, mopping)</p>
                         <p class="service-carousel-price">$150</p>
                     </div>
                     <div class="service-carousel-item service-stores">
-                        <img src="{% static 'images/service/furniture.png' %}" alt="House Image 3">
-                        <p class="service-carousel-title">House Cleaning</p>
+                        <img src="{% static 'images/service/store3.png' %}" alt="House Image 3">
+                        <p class="service-carousel-title">Post-sale or seasonal cleanup</p>
                         <p class="service-carousel-price">$150</p>
                     </div>
                     <div class="service-carousel-item service-stores">
-                        <img src="{% static 'images/service/furniture.png' %}" alt="House Image 4">
-                        <p class="service-carousel-title">House Cleaning</p>
+                        <img src="{% static 'images/service/store4.png' %}" alt="House Image 4">
+                        <p class="service-carousel-title">Inventory area cleaning</p>
                         <p class="service-carousel-price">$150</p>
                     </div>
                     <div class="service-carousel-item service-stores">
-                        <img src="{% static 'images/service/furniture.png' %}" alt="House Image 5">
-                        <p class="service-carousel-title">House Cleaning</p>
+                        <img src="{% static 'images/service/store5.png' %}" alt="House Image 5">
+                        <p class="service-carousel-title">Store Maintenance</p>
                         <p class="service-carousel-price">$150</p>
                     </div>
 
+
                     <div class="service-carousel-item service-restaurant">
-                        <img src="{% static 'images/service/furniture.png' %}" alt="House Image 1">
-                        <p class="service-carousel-title">House Cleaning</p>
+                        <img src="{% static 'images/service/res1.png' %}">
+                        <p class="service-carousel-title">Kitchen and food prep area cleaning</p>
                         <p class="service-carousel-price">$150</p>
                     </div>
                     <div class="service-carousel-item service-restaurant">
-                        <img src="{% static 'images/service/furniture.png' %}" alt="House Image 2">
-                        <p class="service-carousel-title">House Cleaning</p>
+                        <img src="{% static 'images/service/res2.png' %}">
+                        <p class="service-carousel-title">Dining area cleaning</p>
                         <p class="service-carousel-price">$150</p>
                     </div>
                     <div class="service-carousel-item service-restaurant">
-                        <img src="{% static 'images/service/furniture.png' %}" alt="House Image 3">
-                        <p class="service-carousel-title">House Cleaning</p>
+                        <img src="{% static 'images/service/res3.png' %}">
+                        <p class="service-carousel-title">Exterior cleaning (patios, sidewalks)</p>
                         <p class="service-carousel-price">$150</p>
                     </div>
                     <div class="service-carousel-item service-restaurant">
-                        <img src="{% static 'images/service/furniture.png' %}" alt="House Image 4">
-                        <p class="service-carousel-title">House Cleaning</p>
+                        <img src="{% static 'images/service/res4.png' %}">
+                        <p class="service-carousel-title">Floor care (daily maintenance and deep cleaning)</p>
                         <p class="service-carousel-price">$150</p>
                     </div>
                     <div class="service-carousel-item service-restaurant">
-                        <img src="{% static 'images/service/furniture.png' %}" alt="House Image 5">
-                        <p class="service-carousel-title">House Cleaning</p>
+                        <img src="{% static 'images/service/res5.png' %}">
+                        <p class="service-carousel-title">Ventilation Cleaning</p>
                         <p class="service-carousel-price">$150</p>
                     </div>
 
+
                     <div class="service-carousel-item service-gyms">
-                        <img src="{% static 'images/service/furniture.png' %}" alt="House Image 1">
-                        <p class="service-carousel-title">House Cleaning</p>
+                        <img src="{% static 'images/service/gym1.png' %}" alt="House Image 1">
+                        <p class="service-carousel-title">Equipment sanitization</p>
                         <p class="service-carousel-price">$150</p>
                     </div>
                     <div class="service-carousel-item service-gyms">
-                        <img src="{% static 'images/service/furniture.png' %}" alt="House Image 2">
-                        <p class="service-carousel-title">House Cleaning</p>
+                        <img src="{% static 'images/service/gym2.png' %}" alt="House Image 2">
+                        <p class="service-carousel-title">Locker room cleaning</p>
                         <p class="service-carousel-price">$150</p>
                     </div>
                     <div class="service-carousel-item service-gyms">
-                        <img src="{% static 'images/service/furniture.png' %}" alt="House Image 3">
-                        <p class="service-carousel-title">House Cleaning</p>
+                        <img src="{% static 'images/service/gym3.png' %}" alt="House Image 3">
+                        <p class="service-carousel-title">Floor cleaning (sweeping, mopping)</p>
                         <p class="service-carousel-price">$150</p>
                     </div>
                     <div class="service-carousel-item service-gyms">
-                        <img src="{% static 'images/service/furniture.png' %}" alt="House Image 4">
-                        <p class="service-carousel-title">House Cleaning</p>
+                        <img src="{% static 'images/service/gym4.png' %}" alt="House Image 4">
+                        <p class="service-carousel-title">Machines Cleaning</p>
                         <p class="service-carousel-price">$150</p>
                     </div>
                     <div class="service-carousel-item service-gyms">
-                        <img src="{% static 'images/service/furniture.png' %}" alt="House Image 5">
-                        <p class="service-carousel-title">House Cleaning</p>
+                        <img src="{% static 'images/service/gym5.png' %}" alt="House Image 5">
+                        <p class="service-carousel-title">Overall Maintenance</p>
                         <p class="service-carousel-price">$150</p>
                     </div>
                     
@@ -367,7 +378,7 @@
                       <div class="owned-tag-backgrounds-past">4hours</div>
                       <div class="card-content-backgrounds-past">150$</div>
                     </div>
-                    <div class="card-title-past">Card Title 1</div>
+                    <div class="card-title-past">Post-renovation cleaning</div>
                   </div>
               
                   <!-- card 2 -->
@@ -377,7 +388,7 @@
                       <div class="owned-tag-backgrounds-past">5hours</div>
                       <div class="card-content-backgrounds-past">250$</div>
                     </div>
-                    <div class="card-title-past">Card Title 2</div>
+                    <div class="card-title-past">Sidewalk and plaza cleaning</div>
                   </div>
               
                   <!-- card 3 -->
@@ -387,37 +398,37 @@
                       <div class="owned-tag-backgrounds-past">6hours</div>
                       <div class="card-content-backgrounds-past">350$</div>
                     </div>
-                    <div class="card-title-past">Card Title 3</div>
+                    <div class="card-title-past">Exhaust hood and vent cleaning</div>
                   </div>
 
                   <!-- card 4 -->
                   <div class="card-wrapper-past">
-                    <div class="card-backgrounds-past one-past owned-past">
+                    <div class="card-backgrounds-past four-past owned-past">
                       <span class="filter-past"></span>
                       <div class="owned-tag-backgrounds-past">7hours</div>
                       <div class="card-content-backgrounds-past">300$</div>
                     </div>
-                    <div class="card-title-past">Card Title 4</div>
+                    <div class="card-title-past">Graffiti Removal</div>
                   </div>
               
                   <!-- card 5 -->
                   <div class="card-wrapper-past">
-                    <div class="card-backgrounds-past two-past owned-past">
+                    <div class="card-backgrounds-past five-past owned-past">
                       <span class="filter-past"></span>
                       <div class="owned-tag-backgrounds-past">8hours</div>
                       <div class="card-content-backgrounds-past">500$</div>
                     </div>
-                    <div class="card-title-past">Card Title 5</div>
+                    <div class="card-title-past">Classroom cleaning</div>
                   </div>
               
                   <!-- card 6 -->
                   <div class="card-wrapper-past">
-                    <div class="card-backgrounds-past three-past owned-past">
+                    <div class="card-backgrounds-past six-past owned-past">
                       <span class="filter-past"></span>
                       <div class="owned-tag-backgrounds-past">9hours</div>
                       <div class="card-content-backgrounds-past">700$</div>
                     </div>
-                    <div class="card-title-past">Card Title 6</div>
+                    <div class="card-title-past">Balcony and Terrace cleaning</div>
                   </div>
               
                   <!-- Repeat for other cards... -->
@@ -584,7 +595,7 @@
             <div class="social">
                 <h3>Social</h3>
                 <a href="#">Instagram</a> |
-                <a href="#">X (Twitter)</a> |
+                <a href="#">Whatsapp</a> |
                 <a href="#">Facebook</a>
             </div>
             <div class="contact">
