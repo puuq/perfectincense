@@ -39,6 +39,10 @@ header {
 
 .logo {
   padding: 1rem 6rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
 }
 
 .logo h1 {
