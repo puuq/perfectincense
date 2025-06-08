@@ -57,21 +57,3 @@ A Django-based web application that allows customers to book room and apartment 
 
 ---
 
-## 📑 Project Structure
-
-perfectincense/
-├── manage.py
-├── perfectincense/ # Django project settings
-│ ├── settings.py
-│ ├── urls.py
-│ └── wsgi.py
-├── bookings/ # App for handling cleaning orders
-│ ├── models.py # Defines Booking
-│ ├── views.py # Form handlers and admin views
-│ ├── templates/
-│ │ └── bookings/
-│ └── static/
-├── templates/ # Base templates
-├── static/
-├── requirements.txt
-└── README.md
